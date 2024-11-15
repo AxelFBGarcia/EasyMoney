@@ -2,7 +2,7 @@ import { Image, StyleSheet, Platform } from "react-native";
 import Welcome from "@/screens/Welcome";
 
 export default function HomeScreen() {
-  return <Welcome></Welcome>;
+  return null;
 }
 
 const styles = StyleSheet.create({

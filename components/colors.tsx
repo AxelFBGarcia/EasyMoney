@@ -7,4 +7,5 @@ export const colors = {
   graylight: "#F3F4F6",
   graydark: "#4B5563",
   accent: "#fbcd77",
+  gradientPrimary: ["#227d9c", "#17c3b3"],
 };

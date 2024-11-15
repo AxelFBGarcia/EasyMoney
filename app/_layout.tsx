@@ -1,22 +1,15 @@
-import {
-  DarkTheme,
-  DefaultTheme,
-  ThemeProvider,
-} from "@react-navigation/native";
+// RootLayout.tsx
+import RootStack from "@/components/navigators/RootStack";
+import Welcome from "@/screens/Welcome";
 import { useFonts } from "expo-font";
-import { Stack } from "expo-router";
 import * as SplashScreen from "expo-splash-screen";
 import { useEffect } from "react";
 import "react-native-reanimated";
-
-import { useColorScheme } from "@/hooks/useColorScheme";
-import Welcome from "@/screens/Welcome";
 
 // Prevent the splash screen from auto-hiding before asset loading is complete.
 SplashScreen.preventAutoHideAsync();
 
 export default function RootLayout() {
-  const colorScheme = useColorScheme();
   const [loaded] = useFonts({
     futureBook: require("../assets/fonts/FuturaBook.ttf"),
     futurebold: require("../assets/fonts/FuturaBold.ttf"),
@@ -33,9 +26,5 @@ export default function RootLayout() {
     return null;
   }
 
-  return (
-    <ThemeProvider value={colorScheme === "dark" ? DarkTheme : DefaultTheme}>
-      <Welcome></Welcome>
-    </ThemeProvider>
-  );
+  return <RootStack />; // Expo Router handles navigation, so no need to render RootStack here
 }
